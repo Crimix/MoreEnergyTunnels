@@ -147,8 +147,8 @@ dependencies {
 
     shadowCompileOnly fg.deobf("com.black_dog20.bml:bml:${bml_version}")
     runtimeOnly fg.deobf("com.black_dog20.bml:bml:${bml_version}")
-    implementation fg.deobf("curse.maven:compact-machines-224218:3807656")
-    runtimeOnly fg.deobf("curse.maven:mekanism-268560:3743835")
+    implementation fg.deobf("curse.maven:compact-machines-224218:${compactmachines_version}")
+    runtimeOnly fg.deobf("curse.maven:mekanism-268560:${mekanism_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
 }
 

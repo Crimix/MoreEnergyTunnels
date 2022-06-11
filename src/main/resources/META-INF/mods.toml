@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+issueTrackerURL="${issue_url}"
+# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
+license="All rights reserved"
+
+[[mods]]
+modId="moreenergytunnels"
+version="${version}"
+displayName="More Energy Tunnels"
+updateJSONURL="${update_url}"
+displayURL="${display_url}"
+logoFile="logo.png"
+credits="To all my friends for putting up with me breaking the server multiple times during testing"
+authors="black_dog20"
+description='''More energy tunnels for Compact Machines'''
+
+[[dependencies.friendlygriefing]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.friendlygriefing]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.friendlygriefing]]
+    modId="compactmachines"
+    mandatory=true
+    versionRange="[4.3.0,)"
+    ordering="BEFORE"
+    side="BOTH"

@@ -182,5 +182,8 @@ curseforge {
         addGameVersion 'Forge'
         addGameVersion 'Java 17'
         addGameVersion '1.18.2'
+        relations {
+            requiredDependency 'compact-machines'
+        }
     }
 }

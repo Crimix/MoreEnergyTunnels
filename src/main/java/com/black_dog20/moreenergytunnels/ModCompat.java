@@ -27,17 +27,19 @@ public class ModCompat {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void itemTooltip(ItemTooltipEvent event) {
-        TunnelItem.getDefinition(event.getItemStack())
-                .filter(TierForgeEnergyTunnel.class::isInstance)
-                .map(TierForgeEnergyTunnel.class::cast)
-                .ifPresent(tunnelDef -> {
-            if (Screen.hasShiftDown()) {
-                String rate = MathUtil.formatThousands(tunnelDef.getTier().getCapacity());
+        if (event.getItemStack().getItem() instanceof TunnelItem) { //Only ever do this for Tunnel items
+            TunnelItem.getDefinition(event.getItemStack().copy()) //Use copy to not modify the itemstack
+                    .filter(TierForgeEnergyTunnel.class::isInstance)
+                    .map(TierForgeEnergyTunnel.class::cast)
+                    .ifPresent(tunnelDef -> {
+                        if (Screen.hasShiftDown()) {
+                            String rate = MathUtil.formatThousands(tunnelDef.getTier().getCapacity());
 
-                event.getToolTip().add(ADDED_BY.get(ChatFormatting.ITALIC, MOD_NAME.get(ChatFormatting.ITALIC)));
-                event.getToolTip().add(TRANSFER.get(ChatFormatting.ITALIC, RATE.get(ChatFormatting.ITALIC, rate)));
-            }
-        });
+                            event.getToolTip().add(ADDED_BY.get(ChatFormatting.ITALIC, MOD_NAME.get(ChatFormatting.ITALIC)));
+                            event.getToolTip().add(TRANSFER.get(ChatFormatting.ITALIC, RATE.get(ChatFormatting.ITALIC, rate)));
+                        }
+                    });
+        }
     }
 
 }

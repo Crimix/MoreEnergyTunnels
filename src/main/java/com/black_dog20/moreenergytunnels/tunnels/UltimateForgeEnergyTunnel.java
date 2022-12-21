@@ -11,11 +11,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.FastColor;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
-public class UltimateForgeEnergyTunnel extends ForgeRegistryEntry<TunnelDefinition> implements TunnelDefinition, CapabilityTunnel<UltimateForgeEnergyTunnelInstance>, TierForgeEnergyTunnel {
+public class UltimateForgeEnergyTunnel implements TunnelDefinition, CapabilityTunnel<UltimateForgeEnergyTunnelInstance>, TierForgeEnergyTunnel {
 
     @Override
     public int ringColor() {
@@ -24,12 +23,12 @@ public class UltimateForgeEnergyTunnel extends ForgeRegistryEntry<TunnelDefiniti
 
     @Override
     public ImmutableSet<Capability<?>> getSupportedCapabilities() {
-        return ImmutableSet.of(CapabilityEnergy.ENERGY);
+        return ImmutableSet.of(ForgeCapabilities.ENERGY);
     }
 
     @Override
     public <CapType> LazyOptional<CapType> getCapability(Capability<CapType> type, UltimateForgeEnergyTunnelInstance instance) {
-        if (type == CapabilityEnergy.ENERGY) {
+        if (type == ForgeCapabilities.ENERGY) {
             return instance.lazy().cast();
         }
 

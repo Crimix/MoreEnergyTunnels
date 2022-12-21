@@ -16,13 +16,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.RegistryObject;
 
 import static com.black_dog20.moreenergytunnels.utils.Translations.*;
-import static dev.compactmods.machines.core.Tunnels.DEFINITIONS;
+import static dev.compactmods.machines.core.Registries.TUNNEL_DEFINITIONS;
 
 public class ModCompat {
 
-    public static final RegistryObject<TunnelDefinition> ADVANCED_FORGE_ENERGY = DEFINITIONS.register("advanced_energy", AdvancedForgeEnergyTunnel::new);
-    public static final RegistryObject<TunnelDefinition> ELITE_FORGE_ENERGY = DEFINITIONS.register("elite_energy", EliteForgeEnergyTunnel::new);
-    public static final RegistryObject<TunnelDefinition> ULTIMATE_FORGE_ENERGY = DEFINITIONS.register("ultimate_energy", UltimateForgeEnergyTunnel::new);
+    public static final RegistryObject<TunnelDefinition> ADVANCED_FORGE_ENERGY = TUNNEL_DEFINITIONS.register("advanced_energy", AdvancedForgeEnergyTunnel::new);
+    public static final RegistryObject<TunnelDefinition> ELITE_FORGE_ENERGY = TUNNEL_DEFINITIONS.register("elite_energy", EliteForgeEnergyTunnel::new);
+    public static final RegistryObject<TunnelDefinition> ULTIMATE_FORGE_ENERGY = TUNNEL_DEFINITIONS.register("ultimate_energy", UltimateForgeEnergyTunnel::new);
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)

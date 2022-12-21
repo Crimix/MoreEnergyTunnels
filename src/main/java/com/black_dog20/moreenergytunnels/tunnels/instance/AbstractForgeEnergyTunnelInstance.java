@@ -41,12 +41,11 @@ public abstract class AbstractForgeEnergyTunnelInstance implements TunnelInstanc
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
-        if(!nbt.contains("storage")) {
+        if (!nbt.contains("storage")) {
             this.storage = new EnergyStorage(getTier().getCapacity());
-            return;
+        } else {
+            Tag nbtStorage = nbt.get("storage");
+            this.storage.deserializeNBT(nbtStorage);
         }
-
-        final Tag nbtStorage = nbt.get("storage");
-        storage.deserializeNBT(nbtStorage);
     }
 }

@@ -21,7 +21,7 @@ public class GeneratorRecipes extends BaseRecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        TunnelRecipeBuilder.tunnel(ModCompat.ADVANCED_FORGE_ENERGY.get(), 2)
+        TunnelRecipeBuilder.tunnel(ModCompat.ADVANCED_FORGE_ENERGY, 2)
                 .requires(Blocks.GLOWSTONE)
                 .requires(Items.ENDER_PEARL)
                 .requires(Items.REDSTONE)
@@ -29,7 +29,7 @@ public class GeneratorRecipes extends BaseRecipeProvider {
                 .unlockedBy("observer", RecipeProvider.has(Items.OBSERVER))
                 .save(consumer);
 
-        TunnelRecipeBuilder.tunnel(ModCompat.ELITE_FORGE_ENERGY.get(), 2)
+        TunnelRecipeBuilder.tunnel(ModCompat.ELITE_FORGE_ENERGY, 2)
                 .requires(Blocks.DIAMOND_BLOCK)
                 .requires(Items.ENDER_PEARL)
                 .requires(Items.LAPIS_BLOCK)
@@ -37,7 +37,7 @@ public class GeneratorRecipes extends BaseRecipeProvider {
                 .unlockedBy("observer", RecipeProvider.has(Items.OBSERVER))
                 .save(consumer);
 
-        TunnelRecipeBuilder.tunnel(ModCompat.ULTIMATE_FORGE_ENERGY.get(), 2)
+        TunnelRecipeBuilder.tunnel(ModCompat.ULTIMATE_FORGE_ENERGY, 2)
                 .requires(Blocks.NETHERITE_BLOCK)
                 .requires(Items.ENDER_PEARL)
                 .requires(Items.EMERALD_BLOCK)

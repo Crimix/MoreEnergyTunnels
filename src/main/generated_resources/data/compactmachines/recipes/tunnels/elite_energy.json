@@ -15,8 +15,8 @@
     }
   ],
   "result": {
-    "item": "compactmachines:tunnel",
     "count": 2,
+    "item": "compactmachines:tunnel",
     "nbt": {
       "definition": {
         "id": "compactmachines:elite_energy"

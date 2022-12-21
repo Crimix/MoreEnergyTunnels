@@ -1,22 +1,11 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://maven.parchmentmc.org' }
-        maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" }
-        maven { url "https://plugins.gradle.org/m2/" }
-        maven { url='https://repo.spongepowered.org/repository/maven-public/' }
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
+plugins {
+    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
+
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply from: 'https://raw.githubusercontent.com/Crimix/bml/1.18/common.gradle'
-apply from: 'https://raw.githubusercontent.com/Crimix/bml/1.18/shadow.gradle'
+apply from: 'https://raw.githubusercontent.com/Crimix/bml/1.19/common.gradle'
+apply from: 'https://raw.githubusercontent.com/Crimix/bml/1.19/shadow.gradle'
 
 version = version_major + '.' + version_minor + '.' + version_patch
 group = "${mod_group}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -149,7 +138,9 @@ dependencies {
     runtimeOnly fg.deobf("com.black_dog20.bml:bml:${bml_version}")
     implementation fg.deobf("curse.maven:compact-machines-224218:${compactmachines_version}")
     runtimeOnly fg.deobf("curse.maven:mekanism-268560:${mekanism_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
@@ -177,11 +168,11 @@ curseforge {
     project {
         id = '632583'
         changelogType = 'markdown'
-        changelog = 'As always find the changelog here [CHANGELOG](https://github.com/Crimix/MoreEnergyTunnels/blob/1.18/CHANGELOG.md)'
+        changelog = "As always find the changelog here [CHANGELOG](${changelog_url})"
         releaseType = 'release'
         addGameVersion 'Forge'
         addGameVersion 'Java 17'
-        addGameVersion '1.18.2'
+        addGameVersion '1.19.2'
         relations {
             requiredDependency 'compact-machines'
         }

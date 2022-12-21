@@ -4,6 +4,7 @@ import com.black_dog20.bml.datagen.BaseLanguageProvider;
 import dev.compactmods.machines.api.tunnels.TunnelDefinition;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.registries.RegistryObject;
 
 public abstract class BaseModLanguageProvider extends BaseLanguageProvider {
 
@@ -18,8 +19,8 @@ public abstract class BaseModLanguageProvider extends BaseLanguageProvider {
         super(gen, modid, locale);
     }
 
-    protected void addTunnel(TunnelDefinition tunnel, String name) {
-        ResourceLocation id = tunnel.getRegistryName();
+    protected void addTunnel(RegistryObject<TunnelDefinition> tunnel, String name) {
+        ResourceLocation id = tunnel.getId();
         add("item." + id.getNamespace() + ".tunnels." + id.getPath().replace('/', '.'), name);
     }
 }

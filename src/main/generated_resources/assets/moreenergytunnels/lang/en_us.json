@@ -2,8 +2,8 @@
   "item.compactmachines.tunnels.advanced_energy": "Advanced Energy Tunnel",
   "item.compactmachines.tunnels.elite_energy": "Elite Energy Tunnel",
   "item.compactmachines.tunnels.ultimate_energy": "Ultimate Energy Tunnel",
-  "moreenergytunnels.tooltip.added_by": "\u00A77Added by %s\u00A7r",
-  "moreenergytunnels.tooltip.mod_name": "\u00A79More Energy Tunnels\u00A7r",
-  "moreenergytunnels.tooltip.rate": "\u00A7c%s FE/t\u00A7r",
-  "moreenergytunnels.tooltip.transfer": "\u00A77Transfers %s\u00A7r"
+  "moreenergytunnels.tooltip.added_by": "§7Added by %s§r",
+  "moreenergytunnels.tooltip.mod_name": "§9More Energy Tunnels§r",
+  "moreenergytunnels.tooltip.rate": "§c%s FE/t§r",
+  "moreenergytunnels.tooltip.transfer": "§7Transfers %s§r"
 }

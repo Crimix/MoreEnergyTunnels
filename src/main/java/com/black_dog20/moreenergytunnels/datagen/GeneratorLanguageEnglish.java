@@ -20,9 +20,9 @@ public class GeneratorLanguageEnglish extends BaseModLanguageProvider {
         addPrefixed(ADDED_BY,  "Added by %s", ChatFormatting.GRAY);
         addPrefixed(TRANSFER, "Transfers %s", ChatFormatting.GRAY);
         addPrefixed(RATE, "%s FE/t", ChatFormatting.RED);
-        addTunnel(ModCompat.ADVANCED_FORGE_ENERGY.get(), "Advanced Energy Tunnel");
-        addTunnel(ModCompat.ELITE_FORGE_ENERGY.get(), "Elite Energy Tunnel");
-        addTunnel(ModCompat.ULTIMATE_FORGE_ENERGY.get(), "Ultimate Energy Tunnel");
+        addTunnel(ModCompat.ADVANCED_FORGE_ENERGY, "Advanced Energy Tunnel");
+        addTunnel(ModCompat.ELITE_FORGE_ENERGY, "Elite Energy Tunnel");
+        addTunnel(ModCompat.ULTIMATE_FORGE_ENERGY, "Ultimate Energy Tunnel");
     }
 
     @Override
